@@ -1,0 +1,13 @@
+#! /usr/bin/env python
+# encoding: utf-8
+# Leon Bogaert, 2012
+
+import os
+
+task = bld.new_task_gen(
+  features = 'py',
+  source = bld.path.ant_glob('*.py'),
+  install_path = os.path.join(bld.env['PLUGINS_DIR'], 'imgur'))
+
+bld.install_files(task.install_path, 'imgur.plugin')
+

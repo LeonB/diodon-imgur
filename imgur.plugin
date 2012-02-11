@@ -1,0 +1,8 @@
+[Plugin]
+Module=imgur
+Name=Imgur upload plugin
+Loader=python
+Description=This Plugin adds an "Upload to imgur menu item in the diodon menu"
+Authors=Leon Bogaert <leon AT tim-online DOT nl>
+Copyright=Copyright © 2012
+
