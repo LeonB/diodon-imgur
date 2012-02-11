@@ -12,6 +12,7 @@
 #     version 0.0.1 Intial release
 #
 # @TODO: implement error handling :)
+# @TODO: look into new get_current_item(type) (implement in do_activate)
 # @TODO: add more links?!
 ##
 
