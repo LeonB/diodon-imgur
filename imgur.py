@@ -24,8 +24,6 @@ from gi.repository import GObject
 from gi.repository import Peas
 from gi.repository import Diodon
 from gi.repository import Gtk
-from gi.repository import GObject
-GObject.threads_init()
 
 class ImgurPlugin(GObject.Object, Peas.Activatable):
     __gtype_name__ = 'ImgurPlugin'
@@ -66,10 +64,10 @@ class ImgurPlugin(GObject.Object, Peas.Activatable):
         controller.get_menu().remove(self.menu_item)
 
     def do_deactivate(self):
-        controller = self.object
+        self.controller = self.object
 
     def do_update_state(self):
-        controller = self.object
+        self.controller = self.object
 
 
 class UploadWindow(Gtk.Window):
