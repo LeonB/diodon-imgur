@@ -38,8 +38,8 @@ class ImgurPlugin(GObject.Object, Peas.Activatable):
         self.clipboard_item = None
 
         if hasattr(controller, 'get_current_item'):
-            self.clipboard_item = controller.get_current_item()
-            self.add_imgur_menu_item()
+            self.clipboard_item = controller.get_current_item(Diodon.ClipboardType.CLIPBOARD)
+            self.add_imgur_menu_item(controller)
 
         controller.connect('on_add_item', self.on_add_item)
 
@@ -102,7 +102,6 @@ class UploadWindow(Gtk.Window):
         import threading
         t = threading.Thread(None, self.uploader.run, None, (self.progress_callback, self.ready_callback))
         t.start()
-        print 'na thread start!'
 
         self.connect("destroy", self.on_destroy)
 
